@@ -1,0 +1,133 @@
+.footer__wrapper {
+  background-color: #f2f2f2;
+  padding: 80px 0;
+  .footer__section {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .footer__logo {
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+      .logo {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        h2 {
+          font-family: Inter;
+          font-size: 40px;
+          font-weight: 400;
+          line-height: 48.41px;
+          text-align: left;
+        }
+      }
+      p {
+        font-family: Manrope;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 32.78px;
+        text-align: left;
+        color: #454545;
+      }
+      span {
+        font-family: Manrope;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 21.86px;
+        text-align: left;
+        color: #9c9999;
+      }
+      .footer__vk {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        span {
+          padding: 7px;
+          border: 1px solid #454545;
+          border-radius: 50%;
+          font-family: Manrope;
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 21.86px;
+          text-align: left;
+          color: black;
+        }
+      }
+    }
+    .footer__buyers {
+      display: flex;
+      flex-direction: column;
+      gap: 27px;
+      h4 {
+        font-family: Manrope;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 32.78px;
+        text-align: left;
+        color: #454545;
+        margin-bottom: 8px;
+      }
+      p {
+        font-family: Manrope;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 21.86px;
+        text-align: left;
+        color: #9c9999;
+      }
+    }
+    .footer__product {
+      display: flex;
+      flex-direction: column;
+      gap: 27px;
+      h4 {
+        font-family: Manrope;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 32.78px;
+        text-align: left;
+        color: #454545;
+        margin-bottom: 8px;
+      }
+      p {
+        font-family: Manrope;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 21.86px;
+        text-align: left;
+        color: #9c9999;
+      }
+    }
+    .footer__spot {
+      display: flex;
+      flex-direction: column;
+      gap: 27px;
+      h4 {
+        font-family: Manrope;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 32.78px;
+        text-align: left;
+        color: #454545;
+        margin-bottom: 37px;
+      }
+      p {
+        font-family: Manrope;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 21.86px;
+        text-align: left;
+        color: #9c9999;
+      }
+    }
+  }
+}
+@media (max-width: 440px) {
+  .footer__wrapper {
+    .footer__section {
+      flex-direction: column;
+      gap: 36px;
+    }
+  }
+}
