@@ -9,7 +9,7 @@ import Payment from "./pages/payment/Payment";
 function App() {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
