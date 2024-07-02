@@ -1,18 +1,17 @@
 import React from "react";
-import Hero from "../../components/hero/Hero";
 import CatalogComponent from "../../components/catalogComponent/CatalogComponent";
-import Advantages from "../../components/advantages/Advantages";
-import BrandsComponents from "../../components/brandsComponent/BrandsComponents";
-import BlogComponent from "../../components/blogComponent/BlogComponent";
-import LampsComponent from "../../components/lampsComponent/LampsComponent";
-import { useGetProductsQuery } from "../../context/api/productApi";
-import Products from "../../components/products/Products";
 import catalogimg1 from "../../assets/catalogimg1.png";
 import catalogimg2 from "../../assets/catalogimg2.png";
 import catalogimg3 from "../../assets/catalogimg3.png";
 import catalogimg4 from "../../assets/catalogimg4.png";
 import catalogimg5 from "../../assets/catalogimg5.png";
 import catalogimg6 from "../../assets/catalogimg6.png";
+import catalogimg7 from "../../assets/catalogimg7.png";
+import catalogimg8 from "../../assets/catalogimg8.png";
+import catalogimg9 from "../../assets/catalogimg9.png";
+import catalogimg10 from "../../assets/catalogimg10.png";
+import catalogimg11 from "../../assets/catalogimg11.png";
+
 const catalog = [
   {
     id: 1,
@@ -44,21 +43,39 @@ const catalog = [
     title: "Споты",
     img: catalogimg6,
   },
+  {
+    id: 7,
+    title: "Трековые светильники",
+    img: catalogimg7,
+  },
+  {
+    id: 8,
+    title: "Уличные светильники",
+    img: catalogimg8,
+  },
+  {
+    id: 9,
+    title: "Технические светильники",
+    img: catalogimg9,
+  },
+  {
+    id: 10,
+    title: "Светодиодные ленты",
+    img: catalogimg10,
+  },
+  {
+    id: 11,
+    title: "Комплектуюшие",
+    img: catalogimg11,
+  },
 ];
 
-const Home = () => {
-  const { data, isLoading, isError, isSuccess } = useGetProductsQuery();
+const CatalogPage = () => {
   return (
-    <div>
-      <Hero />
-      <CatalogComponent catalogItems={catalog.slice(0, 6)} />
-      <Advantages />
-      <BrandsComponents />
-      <Products data={data} />
-      <BlogComponent />
-      <LampsComponent />
+    <div className="catalogpage">
+      <CatalogComponent showItems={false} catalogItems={catalog} />
     </div>
   );
 };
 
-export default Home;
+export default CatalogPage;

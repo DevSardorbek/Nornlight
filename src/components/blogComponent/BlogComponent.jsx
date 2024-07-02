@@ -6,17 +6,22 @@ import img3 from "../../assets/blimg3.png";
 import top from "../../assets/top.png";
 import "../../sass/__blogComponent.scss";
 
-const BlogComponent = () => {
+const BlogComponent = ({ showButton = true }) => {
   return (
     <div className="blogComponent__wrapper">
       <div className="header__container">
-        <div className="blogComponent__title">
-          <h1>Блог</h1>
-          <button className="btn">
-            <p>Перейти в блог</p>
-            <img src={right} alt="" />
-          </button>
-        </div>
+        {showButton && (
+          <div className="blogComponent__title">
+            <h1>Блог</h1>
+            {showButton && (
+              <button className="btn">
+                <p>Перейти в блог</p>
+                <img src={right} alt="" />
+              </button>
+            )}
+          </div>
+        )}
+
         <div className="blogComponent__section">
           <div className="blogComponent__card">
             <div className="card__img">
