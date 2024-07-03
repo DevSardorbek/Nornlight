@@ -10,6 +10,7 @@ import "../../sass/__header.scss";
 import { useSelector } from "react-redux";
 const Header = ({ setShow }) => {
   const liked = useSelector((state) => state.wishlist.value);
+  const cart_items = useSelector((state) => state.cart.value);
 
   const navigate = useNavigate();
   return (
@@ -52,9 +53,10 @@ const Header = ({ setShow }) => {
               <img src={statistics} alt="heart" />
               <p>Сравнение</p>
             </Link>
-            <Link>
+            <Link className="cart__leng" to={"/basket"}>
               <img src={cart} alt="heart" />
               <p>Корзина</p>
+              <span>{cart_items.length}</span>
             </Link>
           </div>
         </div>

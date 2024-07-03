@@ -102,7 +102,7 @@ const DetailComponent = () => {
               <p>Цвет</p>
               <span>Жёлтый</span>
             </article>
-            <article>
+            <article className="item__bg">
               <p>Год</p>
               <span>2016</span>
             </article>
@@ -110,7 +110,7 @@ const DetailComponent = () => {
               <p>Диаметр колеса</p>
               <span>27.5</span>
             </article>
-            <article>
+            <article className="item__bg">
               <p>Материал рамы</p>
               <span>Карбон</span>
             </article>
@@ -118,7 +118,7 @@ const DetailComponent = () => {
               <p>Размер</p>
               <span>L</span>
             </article>
-            <article>
+            <article className="item__bg">
               <p>Страна</p>
               <span>Швейцария</span>
             </article>
@@ -126,7 +126,7 @@ const DetailComponent = () => {
               <p>Производитель</p>
               <span>Scott</span>
             </article>
-            <article>
+            <article className="item__bg">
               <p>Покрышки</p>
               <span>
                 Schwalbe Rocket Ron EVO / 2.1 127EPI Kevlar Bead Tubeless Easy /
@@ -140,7 +140,7 @@ const DetailComponent = () => {
                 рулевая труба / BB92 / Технология SDS / Дропауты IDS SL
               </span>
             </article>
-            <article>
+            <article className="item__bg">
               <p>Подседельный Штырь</p>
               <span>
                 Ritchey WCS 700 Series: Carbon Link FlexLogic / 31.6mm
@@ -151,7 +151,7 @@ const DetailComponent = () => {
               <p>Седло</p>
               <span>Ritchey WCS Streem V3 Titanium rails</span>
             </article>
-            <article>
+            <article className="item__bg">
               <p>Вилка</p>
               <span>
                 Rock Shox SID RL3 Air / демпфер DNA3 3-режима / 15mm QR axle /

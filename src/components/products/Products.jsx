@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleHeart } from "../../context/slices/wishlistSlice";
 import "../../sass/__products.scss";
 import { Link } from "react-router-dom";
+import { addToCart } from "../../context/slices/cartSlice";
 
 const Products = ({ data }) => {
   const dispatch = useDispatch();
@@ -36,7 +37,7 @@ const Products = ({ data }) => {
             <del>${product.price * 1.5}</del>
             <h2>${product.price}</h2>
           </div>
-          <button>
+          <button onClick={() => dispatch(addToCart(product))}>
             <HiOutlineShoppingCart />
           </button>
         </article>
