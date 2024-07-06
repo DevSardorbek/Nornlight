@@ -2,8 +2,11 @@ import React from "react";
 import right from "../../assets/right.png";
 import right2 from "../../assets/right2.png";
 import "../../sass/__componentCatalog.scss";
+import { useNavigate } from "react-router-dom";
 
 const CatalogComponent = ({ catalogItems, showItems = true }) => {
+  const navigate = useNavigate();
+
   let card = catalogItems.map((el) => (
     <div key={el.id} className="catalogComponent__card">
       <div className="card__info">
@@ -25,7 +28,7 @@ const CatalogComponent = ({ catalogItems, showItems = true }) => {
         <div className="catalogComponent__title">
           <h1>Каталог</h1>
           {showItems && (
-            <button>
+            <button onClick={() => navigate("/catalog")}>
               <p>Весь каталог</p>
               <img src={right} alt="" />
             </button>

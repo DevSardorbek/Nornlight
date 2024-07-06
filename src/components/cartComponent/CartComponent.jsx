@@ -24,7 +24,7 @@ const CartComponent = () => {
     <div key={el._id} className="cartComponent__item">
       <div className="items__img">
         <span>
-          <img src={el.image} alt="" />
+          <img src={el.imageUrl[0]} alt="" />
         </span>
       </div>
       <div className="items__info">

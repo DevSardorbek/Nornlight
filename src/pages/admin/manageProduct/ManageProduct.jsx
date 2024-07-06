@@ -7,26 +7,28 @@ import edit from "../../../assets/edit.png";
 import del from "../../../assets/delete.png";
 import "../../../sass/__manage.scss";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const ManageProduct = () => {
   const { data, isLoading, isError, isSuccess } = useGetProductsQuery();
-  const [deleteProduct] = useDeleteProductMutation(); // Correct usage of hook
+  const [deleteProduct] = useDeleteProductMutation();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   let items = data?.map((el) => (
     <div key={el.id} className="manage__card">
       <div className="card__img">
-        <img src={el?.image} alt="" />
+        <img src={el?.imageUrl[0]} alt="" />
       </div>
       <div className="card__info">
-        <p>{el?.description}</p>
+        <p>{el?.title}</p>
         <div>
           <article>
             <del>${el?.price * 1.5}</del>
             <h3>${el?.price}</h3>
           </article>
           <div className="card__btn">
-            <button>
+            <button onClick={() => navigate(`/admin/edit-product/${el.id}`)}>
               <img src={edit} alt="" />
             </button>
             <button onClick={() => deleteProduct(el.id)}>

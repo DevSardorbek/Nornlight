@@ -21,6 +21,11 @@ import Admin from "./pages/admin/Admin";
 import Login from "./pages/login/Login";
 import CreateProduct from "./pages/admin/createProduct/CreateProduct";
 import ManageProduct from "./pages/admin/manageProduct/ManageProduct";
+import NotFound from "./components/notFoutnd/NotFound";
+import CreateCategory from "./pages/admin/createCategory/CreateCategory";
+import ManageCategory from "./pages/admin/manageCategory/ManageCategory";
+import EditProduct from "./pages/admin/editProduct/EditProduct";
+import AllProducts from "./pages/allProducts/AllProducts";
 
 function App() {
   const [show, setShow] = useState(false);
@@ -41,11 +46,16 @@ function App() {
         <Route path="/catalog" element={<Catalog />} />
         <Route path="/products/:id" element={<Detail />} />
         <Route path="/basket" element={<Basket />} />
+        <Route path="/all-products" element={<AllProducts />} />
+        <Route path="*" element={<NotFound />} />
         <Route path="login" element={<Login />} />
         <Route path="/" element={<Auth />}>
           <Route path="/admin" element={<Admin />}>
             <Route path="create-product" element={<CreateProduct />} />
             <Route path="manage-product" element={<ManageProduct />} />
+            <Route path="create-category" element={<CreateCategory />} />
+            <Route path="manage-category" element={<ManageCategory />} />
+            <Route path="edit-product/:id" element={<EditProduct />} />
           </Route>
         </Route>
       </Routes>

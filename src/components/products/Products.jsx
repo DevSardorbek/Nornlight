@@ -1,29 +1,58 @@
-import React from "react";
+import React, { useState } from "react";
 import right from "../../assets/right2.png";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
 import { HiOutlineShoppingCart } from "react-icons/hi";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleHeart } from "../../context/slices/wishlistSlice";
 import "../../sass/__products.scss";
-import { Link } from "react-router-dom";
-import { addToCart } from "../../context/slices/cartSlice";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { addToCart, removeFromCart } from "../../context/slices/cartSlice";
+import { TbShoppingCartCopy } from "react-icons/tb";
 
 const Products = ({ data }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const location = useLocation();
   const wishlist = useSelector((state) => state.wishlist.value);
+  const cart = useSelector((state) => state.cart.value);
+  const [visibleCount, setVisibleCount] = useState(8);
 
   const isProductInWishlist = (product) => {
     return wishlist.some((item) => item.id === product.id);
+  };
+
+  const isProductInCart = (product) => {
+    return cart.some((item) => item.id === product.id);
   };
 
   const handleToggleHeart = (product) => {
     dispatch(toggleHeart(product));
   };
 
-  let card = data?.map((product) => (
+  const handleAddToCart = (product) => {
+    if (isProductInCart(product)) {
+      dispatch(removeFromCart(product.id));
+    } else {
+      dispatch(addToCart(product));
+    }
+  };
+
+  const handleSeeMore = () => {
+    setVisibleCount((prevCount) => prevCount + 4);
+  };
+
+  if (!data || data.length === 0) {
+    return (
+      <div className="header__container">
+        <p>no product available</p>
+      </div>
+    );
+  }
+
+  let card = data.slice(0, visibleCount).map((product) => (
     <div key={product.id} className="products__card">
       <div className="card__img">
-        <img src={product.image} alt="" />
+        <img src={product.imageUrl} alt="" />
         <button onClick={() => handleToggleHeart(product)}>
           {isProductInWishlist(product) ? <FaHeart /> : <FaRegHeart />}
         </button>
@@ -37,8 +66,12 @@ const Products = ({ data }) => {
             <del>${product.price * 1.5}</del>
             <h2>${product.price}</h2>
           </div>
-          <button onClick={() => dispatch(addToCart(product))}>
-            <HiOutlineShoppingCart />
+          <button onClick={() => handleAddToCart(product)}>
+            {isProductInCart(product) ? (
+              <TbShoppingCartCopy />
+            ) : (
+              <HiOutlineShoppingCart />
+            )}
           </button>
         </article>
       </div>
@@ -48,14 +81,23 @@ const Products = ({ data }) => {
   return (
     <div className="products__wrapper">
       <div className="header__container">
-        <div className="products__title">
-          <h1>Популярные товары</h1>
-          <button className="btn">
-            <p>Все товары</p>
-            <img src={right} alt="" />
-          </button>
-        </div>
+        {location.pathname !== "/all-products" && (
+          <div className="products__title">
+            <h1>Популярные товары</h1>
+            <button onClick={() => navigate("/all-products")} className="btn">
+              <p>Все товары</p>
+              <img src={right} alt="" />
+            </button>
+          </div>
+        )}
         <div className="products__section">{card}</div>
+        {visibleCount < data.length && (
+          <div className="see__more">
+            <button className="btn" onClick={handleSeeMore}>
+              See more
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

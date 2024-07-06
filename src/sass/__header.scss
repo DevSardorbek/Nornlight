@@ -15,6 +15,25 @@
       display: flex;
       align-items: center;
       gap: 27px;
+      .btn_cat {
+        display: none;
+      }
+      button {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        padding: 18px 27px;
+        border-radius: 100px;
+        background-color: #454545;
+        color: #fff;
+        font-family: Manrope;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 21.86px;
+        text-align: left;
+        border: none;
+        cursor: pointer;
+      }
       a {
         font-family: Manrope;
         font-size: 14px;
@@ -52,6 +71,14 @@
     align-items: center;
     gap: 31px;
     padding-bottom: 20px;
+    .burger {
+      display: none;
+      button {
+        border: none;
+        background-color: transparent;
+        font-size: 24px;
+      }
+    }
     .header__bottom-logo {
       display: flex;
       align-items: center;
@@ -129,6 +156,78 @@
           text-align: left;
           color: #454545;
         }
+      }
+    }
+  }
+  .header__form-botttom {
+    display: none;
+    form {
+      display: flex;
+      align-items: center;
+      width: 626px;
+      border: 1px solid #454545;
+      border-radius: 100px;
+      padding: 17px 19px;
+      input {
+        flex: 1;
+        font-family: Manrope;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 21.86px;
+        text-align: left;
+        color: #9e9b9b;
+      }
+    }
+  }
+}
+@media (max-width: 958px) {
+  .header__wrapper {
+    width: 100%;
+    .header__top {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      display: none;
+      .header__top-links {
+        flex-direction: column;
+        width: 100%;
+        .btn_cat {
+          display: block;
+          width: 20%;
+          display: flex;
+          justify-content: center;
+          margin-bottom: 20px;
+        }
+      }
+      .header__top-contact {
+        flex-direction: column;
+      }
+    }
+    .header__bottom {
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      .burger {
+        display: block;
+      }
+      .header__bottom-info {
+        .comparison {
+          display: none;
+        }
+      }
+      .btn1 {
+        display: none;
+      }
+      form {
+        display: none;
+      }
+    }
+    .header__form-botttom {
+      display: block;
+      width: 100%;
+      padding-bottom: 13px;
+      form {
+        width: 100%;
       }
     }
   }

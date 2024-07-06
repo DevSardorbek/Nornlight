@@ -50,6 +50,8 @@
       border: none;
       border-radius: 10px;
       resize: none;
+      padding: 20px 30px;
+      outline: none;
     }
     button {
       width: 180px;
@@ -62,6 +64,7 @@
       font-weight: 500;
       line-height: 19.68px;
       text-align: center;
+      cursor: pointer;
     }
   }
 }

@@ -1,0 +1,37 @@
+.notfoud__wrapper {
+  margin-top: 230px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
+  gap: 40px;
+  h1 {
+    font-family: Manrope;
+    font-size: 427px;
+    font-weight: 700;
+    line-height: 469.7px;
+    text-align: left;
+    color: #bab9b9;
+  }
+  p {
+    font-family: Manrope;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 33.6px;
+    text-align: left;
+    color: #454545;
+  }
+  button {
+    padding: 14px 63px;
+    border-radius: 100px;
+    background-color: #454545;
+    font-family: Manrope;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 21.86px;
+    text-align: left;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+}
