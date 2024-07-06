@@ -23,8 +23,8 @@ const Sidebar = () => {
       <h2 className="sidebar__logo">
         <Link to={"/"}>
           <FaArrowAltCircleLeft />
+          <span>Dashboard</span>
         </Link>
-        <span>Dashboard</span>
       </h2>
       <ul className="sidebar__collection">
         <li className="sidebar__item">
