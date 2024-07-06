@@ -138,6 +138,10 @@
         gap: 6px;
         cursor: pointer;
         position: relative;
+        svg {
+          font-size: 30px;
+          color: #454545;
+        }
         span {
           position: absolute;
           background-color: #c63c3c;

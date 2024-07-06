@@ -9,6 +9,7 @@ import cart from "../../assets/cart.png";
 import "../../sass/__header.scss";
 import { useSelector } from "react-redux";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
+import { RxAvatar } from "react-icons/rx";
 
 const Header = ({ setShow }) => {
   const liked = useSelector((state) => state.wishlist.value);
@@ -63,9 +64,9 @@ const Header = ({ setShow }) => {
               <p>Избранное</p>
               <span>{liked.length}</span>
             </Link>
-            <Link className="comparison">
-              <img src={statistics} alt="heart" />
-              <p>Сравнение</p>
+            <Link to={"/admin"} className="comparison">
+              <RxAvatar />
+              <p>Admin</p>
             </Link>
             <Link className="cart__leng" to={"/basket"}>
               <img src={cart} alt="heart" />
